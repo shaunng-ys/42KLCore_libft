@@ -22,6 +22,7 @@ int main(void)
     printf("%s\n", s);
     ft_bzero(s, nbr);
     printf("This is the output after the former string has passed through the ft_bzero function: %s\n\n", s);
+    return (0);
 }
 
 void    ft_bzero(void *s, size_t n)
