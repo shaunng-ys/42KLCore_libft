@@ -40,10 +40,21 @@ int main(void)
 
 int main(void)
 {
-    int nbr_arr0[] = {0, 1, 2, 3, 5764757};
-    int nbr_arr1[] = {0, 1, 2, 3, 54854};
-    size_t limiter = 5 * sizeof(int);
+    int nbr_arr0[] = {0, 1, 2, 3, 65535};
+    int nbr_arr1[] = {0, 1, 2, 3, 255};
+    size_t limiter = 20 * sizeof(int);
 
     printf("%d", memcmp(((void *)nbr_arr0), ((void *)nbr_arr1), limiter));
+
+    /*
+    const char  *str1 = "This is string 142";
+    const char  *str2 = "This is string 253";
+    const int   nbr_array2[100] = {0, 1, 2, 3, 2055};
+    const int   nbr_array3[100] = {0, 1, 2, 3, 6686};
+    size_t limiter1 = sizeof(char) * 25;
+
+    printf("%d\n", memcmp(str1, str2, limiter1));
+    printf("%d\n", memcmp(nbr_array2, nbr_array3, limiter1));
+    */
     return (0);
 }

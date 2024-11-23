@@ -10,42 +10,23 @@
 #                                                                              #
 # **************************************************************************** #
 
-MY_VAR =  this is a string
+CC = cc
+CFLAGS = -Wall -Werror -Wextra
+RM = rm -rf
+NAME = libft.a
+OBJS = ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o
 
-MY_OTHER_VAR = hello $(MY_VAR)
+all: $(OBJS)
+		$(CC) main.c $(OBJS) -o $(NAME)
 
-MY_OTHER_VAR += "Bye !"
-
-NAME = my_prog
-
-MY_SOURCES = 	ft_putchar.c \
-		ft_putstr.c \
-		main.c
-
-MY_OBJECTS = $(MY_SOURCES: .c = .o)
-
-CFLAGS += -Wall
-
-CUR_DIR = $(shell pwd)
-
-$(NAME):	$(MY_OBJECTS)
-		cc -o $(NAME) $(MY_OBJECTS)
-
-a_prog:	ft_putchar.o main.o
-	cc -o this prog ft_putchar.o main.o
-
-my_rule:	sub_rule
-		echo I will compile my files $(MY_SOURCES)
-
-sub_rule:
-		echo This is my rule, in $(CUR_DIR)
-
-all:
+%.o: %c
+		$(CC) -c $<
 
 clean:
+		$(RM) $(OBJS)
 
-fclean:
+fclean: clean
+		$(RM) $(NAME) 
 
-re:
-
-bonus:
+re: fclean
+		$(MAKE) all

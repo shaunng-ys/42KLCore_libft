@@ -20,7 +20,7 @@ int main(void)
     char    destination_str[100] = "What about us?";
     size_t nbr;
 
-    nbr = 16*sizeof(char);
+    nbr = 16 * sizeof(char);
     printf("These are the original values: %s\n", destination_str);
     ft_memcpy(destination_str, source_str, nbr);
     printf("These are the new values: %s\n", destination_str);
