@@ -9,11 +9,11 @@
 /*   Updated: 2024/11/07 11:02:14 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
+
+#include "libft.h"
+
 int	ft_isascii(int c);
-/*
+
 int	main(void)
 {
 	char	c0;
@@ -34,7 +34,6 @@ int	main(void)
 	printf("%d\n", ft_isascii(c4));
 	return (0);
 }
-*/
 
 int	ft_isascii(int c)
 {

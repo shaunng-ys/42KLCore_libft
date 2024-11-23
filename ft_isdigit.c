@@ -9,11 +9,11 @@
 /*   Updated: 2024/11/07 10:09:13 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
+
+#include "libft.h"
+
 int	ft_isdigit(int c);
-/*
+
 int	main(void)
 {
 	char	c;
@@ -22,7 +22,6 @@ int	main(void)
 	printf("%d", ft_isdigit(c));
 	return (0);
 }
-*/
 
 int	ft_isdigit(int c)
 {

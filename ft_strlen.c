@@ -9,9 +9,9 @@
 /*   Updated: 2024/11/07 16:00:54 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
+
+#include "libft.h"
+
 size_t	ft_strlen(const char *s);
 /*
 int	main(void)

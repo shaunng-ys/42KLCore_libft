@@ -9,11 +9,11 @@
 /*   Updated: 2024/11/07 10:27:48 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
+
+#include "libft.h"
+
 int	ft_isalnum(int c);
-/*
+
 int	main(void)
 {
 	printf("Statement is true if followed by 1, false if followed by 0\n");
@@ -26,7 +26,6 @@ int	main(void)
 	printf("Is null alphanumeric: %d\n", ft_isalnum(0));
 	return (0);
 }
-*/
 
 int	ft_isalnum(int c)
 {

@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
+#include "libft.h"
 /*
 ft_strlcat(3bsd - from man strlcat)
               Copy and catenate the input string into a destination

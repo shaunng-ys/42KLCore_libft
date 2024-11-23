@@ -9,11 +9,11 @@
 /*   Updated: 2024/11/07 15:59:53 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
+
+#include "libft.h"
+
 int	ft_isprint(int c);
-/*
+
 int	main(void)
 {
 	int	c0;
@@ -25,7 +25,6 @@ int	main(void)
 	printf("%d\n", ft_isprint(c1));
 	return (0);
 }
-*/
 
 int	ft_isprint(int c)
 {

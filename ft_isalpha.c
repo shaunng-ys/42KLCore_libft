@@ -9,11 +9,11 @@
 /*   Updated: 2024/11/06 18:46:53 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
+
+#include "libft.h"
+
 int	ft_isalpha(int c);
-/*
+
 int	main(void)
 {
 	char	c;
@@ -22,7 +22,6 @@ int	main(void)
 	printf("%d", ft_isalpha(c));	
 	return (0);
 }
-*/
 
 int	ft_isalpha(int c)
 {

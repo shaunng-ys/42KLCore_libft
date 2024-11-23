@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
+#include "libft.h"
 /*
 int strncmp(const char s1[.n], const char s2[.n], size_t n);
 
