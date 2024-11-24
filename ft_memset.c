@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 void	*ft_memset(void *str, int c, size_t n);
 
 int	main(void)
@@ -36,7 +36,7 @@ int	main(void)
 	printf("\n%s", string);
 	return (0);
 }
-
+*/
 void ft_ascii(char *arr)
 {
 	arr++;

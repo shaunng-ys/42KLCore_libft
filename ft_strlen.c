@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 size_t	ft_strlen(const char *s);
 /*
 int	main(void)
@@ -25,7 +25,6 @@ int	main(void)
 	return (0);
 }
 */
-
 size_t	ft_strlen(const char *s)
 {
 	size_t	nbr_of_char;

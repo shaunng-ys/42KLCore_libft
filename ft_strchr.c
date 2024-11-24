@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 char    *ft_strchr(const char *s, int c);
 
 int main(void)
@@ -24,7 +24,7 @@ int main(void)
     printf("%s", ft_strchr(str, nbr));
     return (0);
 }
-
+*/
 char    *ft_strchr(const char *s, int c)
 {
     int i;

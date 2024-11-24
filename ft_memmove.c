@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 void    *ft_memmove(void *dest, const void *src, size_t n);
 
 int main(void)
@@ -25,7 +25,7 @@ int main(void)
     printf("This is the destination string after being passed through the ft_memmove function: %s\n", destination_string);
     return (0);
 }
-
+*/
 void    *ft_memmove(void *dest, const void *src, size_t n)
 {
     unsigned int    i;

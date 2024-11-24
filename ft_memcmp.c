@@ -24,7 +24,7 @@ match, or be greater than the first n bytes of s2.
 For a nonzero return value, the sign is determined by the sign of the difference between the first pair of bytes (interpreted as unsigned char) that differ in s1 and s2.
 
 If n is zero, the return value is zero.
-*/
+
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int main(void)
@@ -36,13 +36,13 @@ int main(void)
     size_t limiter = sizeof(char) * 19;
     size_t limiter1 = sizeof(int) * 5;
     
-    /*
+    
     //Snippet for comparing with the original memcmp function
     int nbr_arr0[] = {0, 1, 2, 3, 65535};
     int nbr_arr1[] = {0, 1, 2, 3, 255};
     size_t limiter = 20 * sizeof(int);
     printf("%d", memcmp(((void *)nbr_arr0), ((void *)nbr_arr1), limiter));
-    */   
+ 
     
     printf("%d\n", memcmp(str1, str2, limiter));
     printf("%d\n", memcmp(nbr_array0, nbr_array1, limiter1));
@@ -51,7 +51,7 @@ int main(void)
     printf("%d\n", ft_memcmp(nbr_array0, nbr_array1, limiter1));
     return (0);
 }
-
+*/
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
     int i;

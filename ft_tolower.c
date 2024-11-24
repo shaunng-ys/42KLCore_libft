@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 int ft_tolower(int c);
 
 int main(void)
@@ -19,7 +19,7 @@ int main(void)
     printf("%c\n", ft_tolower('A' - 1));
     return (0);
 }
-
+*/
 int ft_tolower(int c)
 {
     if (c > 64 && c < 91)

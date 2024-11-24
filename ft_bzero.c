@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*
 void    ft_bzero(void *s, size_t n);
 
 int main(void)
@@ -24,7 +25,7 @@ int main(void)
     printf("This is the output after the former string has passed through the ft_bzero function: %s\n\n", s);
     return (0);
 }
-
+*/
 void    ft_bzero(void *s, size_t n)
 {
     int i;

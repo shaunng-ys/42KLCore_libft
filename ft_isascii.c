@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 int	ft_isascii(int c);
 
 int	main(void)
@@ -34,7 +34,7 @@ int	main(void)
 	printf("%d\n", ft_isascii(c4));
 	return (0);
 }
-
+*/
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)

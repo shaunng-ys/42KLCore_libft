@@ -37,7 +37,7 @@ RETURN VALUE
        than,  equal  to,  or  greater than zero if s1 (or the first n
        bytes thereof) is found, respectively, to  be  less  than,  to
        match, or be greater than s2.
-*/
+
 int ft_strncmp(const char *s0, const char *s1, size_t n);
 
 int main(void)
@@ -49,7 +49,7 @@ int main(void)
     printf("%d", ft_strncmp(str0, str1, limiter));
     return (0);
 }
-
+*/
 int ft_strncmp(const char *s0, const char *s1, size_t n)
 {
     int i;

@@ -11,16 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int ft_toupper(int c);
 /*
+int ft_toupper(int c);
+
 int main(void)
 {
     printf("%c\n", ft_toupper(123));
     return (0);
 }
 */
-
 int ft_toupper(int c)
 {
     if (c > 96 && c < 123)

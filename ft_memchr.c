@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /*
 void *memchr(const void s[.n], int c, size_t n);
 
@@ -21,7 +20,7 @@ DESCRIPTION
 RETURN VALUE
        The  memchr()  and memrchr() functions return a pointer to the matching byte or NULL if the character does not
        occur in the given memory area.
-*/
+
 void    *ft_memchr(const void *s, int c, size_t n);
 
 int main(void)
@@ -32,7 +31,7 @@ int main(void)
     printf("%s", ((char *)ft_memchr(str, chr, limiter)));
     return (0);
 }
-
+*/
 void    *ft_memchr(const void *s, int c, size_t n)
 {
     int i;

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*
 int	ft_isalnum(int c);
 
 int	main(void)
@@ -26,7 +27,7 @@ int	main(void)
 	printf("Is null alphanumeric: %d\n", ft_isalnum(0));
 	return (0);
 }
-
+*/
 int	ft_isalnum(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))

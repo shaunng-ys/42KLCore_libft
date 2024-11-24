@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*
 void    *ft_memcpy(void *dest_str, const void *src_str, size_t n);
 
 int main(void)
@@ -26,7 +27,7 @@ int main(void)
     printf("These are the new values: %s\n", destination_str);
     return (0);
 }
-
+*/
 void    *ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {
     unsigned int value_size;

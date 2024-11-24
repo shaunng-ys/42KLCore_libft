@@ -19,7 +19,7 @@ ft_strlcat(3bsd - from man strlcat)
               is truncated (but it is guaranteed to be null-terminated).
               They return the length of the total string they tried to
               create.
-*/
+
 size_t  ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 int main(void)
@@ -27,7 +27,7 @@ int main(void)
 
     return (0);
 }
-
+*/
 size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 

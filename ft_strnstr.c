@@ -36,7 +36,7 @@ EXAMPLES
 	     char *ptr;
 
 	     ptr = strnstr(largestring,	smallstring, 4);
-*/
+
 //char    *ft_strnstr(const char *big, const char *little, size_t len);
 
 int main(void)
@@ -50,10 +50,8 @@ int main(void)
        printf("%s", ptr);
     return (0);
 }
-
-/*
+*/
 char    *ft_strnstr(const char *big, const char *little, size_t len)
 {
 
 }
-*/
