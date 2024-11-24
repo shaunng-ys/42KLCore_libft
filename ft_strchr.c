@@ -28,7 +28,6 @@ int main(void)
 char    *ft_strchr(const char *s, int c)
 {
     int i;
-    char    *ptr_placeholder;
 
     i = 0;
     if (c == 0)

@@ -27,8 +27,9 @@ int main(void)
 
     return (0);
 }
-*/
+
 size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 
 }
+*/
