@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr_anti-cancer1.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaun <sng@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 16:35:31 by shaun             #+#    #+#             */
-/*   Updated: 2024/11/23 16:35:33 by shaun             ###   ########kl       */
+/*   Created: 2024/11/27 23:45:00 by shaun             #+#    #+#             */
+/*   Updated: 2024/11/27 23:45:02 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main(void)
 {
        //Example from manual
        const char	*largestring = "Foo Bar Baz";
-	const char	*smallstring = "r";
+	const char	*smallstring = "Baz";
 	char *ptr;
 
 	ptr = ft_strnstr(largestring, smallstring, 50);
@@ -59,38 +59,28 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
        int    i;
        int    counter;
        int    tracer;
-       int    placeholder;
 
        i = 0;
-       //I tried to change counter to one instead of adding one to tracer in the if else conditional but for some reason it doesn't yield the same result.
        counter = 0;
-       placeholder = 0;
-       while (little[i] != 0)
-       {
+       tracer = 0;
+       while (little[i++])
               counter++;
-              i++;
-       }
-       printf("%d", counter);
-       i = 0;
-       if (little[i] == 0)
+       if (!counter)
               return ((char *)big);
-       while (len != 0 && big[i] != 0)
+       i = 0;
+       while (len && big[i])
        {
-              tracer = 0;
-              while (big[placeholder] == little[tracer])
+              while (big[tracer + i] == little[tracer])
               {
-                     if ((tracer + 1 == counter))
-                     {
-                            big = big + i;
-                            return ((char *)big);
-                     }
-                     placeholder++;
-                     tracer++;
-                     printf("%d", tracer);
+                     if (!little[tracer])
+                            return ((char *)big + i);
+                     tracer++;   
               }
               i++;
-              placeholder = i;
+              tracer = 0;
+              counter++;
               len--;
        }
        return (0);
 }
+

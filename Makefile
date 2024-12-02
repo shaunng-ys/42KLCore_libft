@@ -10,6 +10,31 @@
 #                                                                              #
 # **************************************************************************** #
 
+# Let me explain the difference between these Makefile rules:
+
+# `fclean` (full clean):
+# - Depends on the `clean` rule (will execute `clean` first)
+# - Then removes the final program/library file ($(NAME))
+# - Used when you want to remove all generated files, including the final executable
+
+# `re` (rebuild):
+# - Depends on `fclean` and `all` in that order
+# - First does a full clean by running `fclean`
+# - Then rebuilds everything from scratch by running `all`
+# - Useful when you want to ensure a completely fresh build
+
+# Example workflow:
+# ```bash
+# make clean   # Removes object files
+# make fclean  # Removes object files AND final program
+# make re      # Complete rebuild: clean everything and recompile
+# ```
+
+# Think of it as:
+# - `clean`: Partial cleanup
+# - `fclean`: Complete cleanup
+# - `re`: Complete cleanup + rebuild
+
 CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
@@ -40,3 +65,5 @@ fclean: clean
 		$(RM) $(NAME) 
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus
