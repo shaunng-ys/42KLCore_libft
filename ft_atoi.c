@@ -12,12 +12,14 @@
 
 #include "libft.h"
 
+/*
 int main(void)
 {
     const char  *str_nbr = "       -684909876789098731295abcd";
     printf("%d\n", ft_atoi(str_nbr));
     return (0);
 }
+*/
 
 int ft_atoi(const char *nptr)
 {

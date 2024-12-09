@@ -37,11 +37,12 @@ int	main(void)
 	return (0);
 }
 */
+/*
 void ft_ascii(char *arr)
 {
 	arr++;
 }
-
+*/
 void	*ft_memset(void *str, int c, size_t n)
 {
 	int	i;

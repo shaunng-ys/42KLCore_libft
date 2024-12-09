@@ -26,14 +26,14 @@ The following instructions supersedes what you can find in the man page:
 If nmemb or size is 0, then calloc() returns a unique pointer value that can later be successfully passed to free().
 */
 
-
+/*
 int main(void)
 {
     void *memspace_ptr;
-    int counter = 1000;
+    int counter = 1000 * sizeof(char);
     int i = 0;
 
-    memspace_ptr = ft_calloc(8, sizeof(char));
+    memspace_ptr = ft_calloc(1000, sizeof(char));
     printf("%p\n", memspace_ptr);
     while (counter)
     {
@@ -43,6 +43,7 @@ int main(void)
     }
     return (0);
 }
+*/
 
 /*
 NAME
@@ -113,7 +114,8 @@ void    *ft_calloc(size_t nmemb, size_t size)
 
 
     i = 0;
-    store =  (nmemb * size);
+    store = (nmemb * size);
+    printf("%zu\n", store);
     //counter = nmemb;
     if (nmemb == 0 || size == 0)
         return (malloc(0));
@@ -138,6 +140,7 @@ void    *ft_calloc(size_t nmemb, size_t size)
    while (store)
    {
         ((char *)ptr)[i] = 0;
+        i++;
         store--;
    }
     return (ptr);

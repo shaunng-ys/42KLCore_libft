@@ -41,7 +41,7 @@ EXAMPLES
 */
 
 
-
+/*
 int main(void)
 {
        //Example from manual
@@ -53,6 +53,7 @@ int main(void)
        printf("%s", ptr);
        return (0);
 }
+*/
 
 char    *ft_strnstr(const char *big, const char *little, size_t len)
 {
