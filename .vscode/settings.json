@@ -1,6 +1,8 @@
 {
     "makefile.configureOnOpen": true,
     "files.associations": {
-        "stdio.h": "c"
-    }
+		"stdio.h": "c",
+		"libft.h": "c",
+		"ostream": "c"
+	}
 }

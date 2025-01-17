@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaun <sng@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 11:34:00 by shaun             #+#    #+#             */
-/*   Updated: 2024/11/07 16:00:54 by shaun             ###   ########kl       */
+/*   Created: 2025/01/14 18:10:47 by shaun             #+#    #+#             */
+/*   Updated: 2025/01/14 18:10:49 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-size_t	ft_strlen(const char *s);
+
+void	test_function(unsigned int j, char *pointer)
+{
+	*pointer += 32;
+}
 
 int	main(void)
 {
-	size_t		r;
-	const char	*str;
-
-	str = "Apple Macbook Pro 16";
-	r = ft_strlen(str);
-	printf("%zu\n", r);
+	char	string[] = "THIS IS A STRING";
+	printf("This is the original string: %s\n", string);
+	ft_striteri(string, test_function);
+	printf("The is the string (after passing through ft_striteri): %s\n", string);
 	return (0);
 }
-*/
-size_t	ft_strlen(const char *s)
-{
-	size_t	nbr_of_char;
-	int		i;
 
-	nbr_of_char = 0;
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+	
 	i = 0;
-	while (s[i])
+	while(s[i])
 	{
+		f(i, &s[i]);
 		i++;
-		nbr_of_char++;
 	}
-	return (nbr_of_char);
 }

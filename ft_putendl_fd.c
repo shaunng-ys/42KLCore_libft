@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaun <sng@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 11:34:00 by shaun             #+#    #+#             */
-/*   Updated: 2024/11/07 16:00:54 by shaun             ###   ########kl       */
+/*   Created: 2025/01/15 14:14:42 by shaun             #+#    #+#             */
+/*   Updated: 2025/01/15 14:14:45 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-size_t	ft_strlen(const char *s);
+#include <fcntl.h>
 
 int	main(void)
 {
-	size_t		r;
-	const char	*str;
-
-	str = "Apple Macbook Pro 16";
-	r = ft_strlen(str);
-	printf("%zu\n", r);
+	int	fd = open("./test.c", O_RDWR);
+	char	*string1 = "This is the 2nd string for testing";
+	ft_putendl_fd(string1, fd);
 	return (0);
 }
-*/
-size_t	ft_strlen(const char *s)
-{
-	size_t	nbr_of_char;
-	int		i;
 
-	nbr_of_char = 0;
+void	ft_putendl_fd(char *s, int fd)
+{
+	int	i;
+	char	nl;
+
 	i = 0;
+	nl = '\n';
 	while (s[i])
 	{
+		write(fd, &s[i], 1);
 		i++;
-		nbr_of_char++;
 	}
-	return (nbr_of_char);
+	write(fd, &nl, 1);
 }

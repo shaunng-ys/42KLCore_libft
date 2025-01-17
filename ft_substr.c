@@ -14,8 +14,8 @@
 
 int main(void)
 {
-    char const *string = "This is the string";
-    unsigned int starting_char = 2;
+    char const *string = "Give this a try";
+    unsigned int starting_char = 5;
     size_t max = 40;
     printf("%s", ft_substr(string, starting_char, max));
     return (0);
@@ -37,13 +37,14 @@ The substring begins at index ’start’ and is of maximum size ’len’.
 */
 char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    int i;
-    int counter;
+    int     i;
+    int     counter;
     char    *ptr0;
     void    *ptr1;
     size_t  str_len = ft_strlen(s);
     
     i = 0;
+    counter = 0;
     /*
     DESCRIPTION
        The  memchr()  function scans the initial n bytes of the memory area pointed to by s for the first instance of
@@ -58,9 +59,9 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     /*
     ptr0 = ft_memchr((char *)s, start, str_len);
     */
-    ptr0 = s + start - 1;
+    ptr0 = (char *)s + start - 1;
     
-    while (((char *)ptr0)[i])
+    while ((ptr0)[i])
     {
         counter++;
         i++;
@@ -73,11 +74,12 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     if (ptr1 == NULL)
         return (NULL);
     else
-        while((len != 0) || (((char *)ptr0)[i] != 0))
+        while((len != 0) && (((char *)ptr0)[i] != 0))
         {
             ((char *)ptr1)[i] = ((char *)ptr0)[i];
             i++;
             len--;
         }
+        ((char *)ptr1)[i] = '\0';
     return (ptr1);
 }

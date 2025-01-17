@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaun <sng@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 11:34:00 by shaun             #+#    #+#             */
-/*   Updated: 2024/11/07 16:00:54 by shaun             ###   ########kl       */
+/*   Created: 2025/01/14 22:36:51 by shaun             #+#    #+#             */
+/*   Updated: 2025/01/14 22:36:59 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-size_t	ft_strlen(const char *s);
+#include <fcntl.h>
 
 int	main(void)
 {
-	size_t		r;
-	const char	*str;
-
-	str = "Apple Macbook Pro 16";
-	r = ft_strlen(str);
-	printf("%zu\n", r);
+	int fd = open("./test.c", O_RDWR);
+	ft_putchar_fd('c', fd);
 	return (0);
 }
-*/
-size_t	ft_strlen(const char *s)
-{
-	size_t	nbr_of_char;
-	int		i;
 
-	nbr_of_char = 0;
-	i = 0;
-	while (s[i])
-	{
-		i++;
-		nbr_of_char++;
-	}
-	return (nbr_of_char);
+void ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }
