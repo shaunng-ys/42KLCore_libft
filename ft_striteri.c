@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-void	test_function(unsigned int j, char *pointer)
-{
-	*pointer += 32;
-}
+// void	test_function(unsigned int j, char *pointer)
+// {
+// 	*pointer += 32;
+// }
 
-int	main(void)
-{
-	char	string[] = "THIS IS A STRING";
-	printf("This is the original string: %s\n", string);
-	ft_striteri(string, test_function);
-	printf("The is the string (after passing through ft_striteri): %s\n", string);
-	return (0);
-}
+// int	main(void)
+// {
+// 	char	string[] = "THIS IS A STRING";
+// 	printf("This is the original string: %s\n", string);
+// 	ft_striteri(string, test_function);
+// 	printf("The is the string (after passing through ft_striteri): %s\n", string);
+// 	return (0);
+// }
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

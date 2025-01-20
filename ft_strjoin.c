@@ -29,19 +29,19 @@ Allocates (with malloc(3)) and returns a new
 string, which is the result of the concatenation
 of ’s1’ and ’s2’.
 */
-char    *ft_strjoin(char const *s1, char const *s2);
+// char    *ft_strjoin(char const *s1, char const *s2);
 
-int main(void)
-{
-   char const  *first_string = "Hello, ";
-   char const  *second_string = "World";
-   /*
-   char const  *first_string = "Nike & ";
-   char const  *second_string = "Adidas";
-   */
-   printf("%s", ft_strjoin(first_string, second_string));
-   return (0);
-}
+// int main(void)
+// {
+//    char const  *first_string = "Hello, ";
+//    char const  *second_string = "World";
+//    /*
+//    char const  *first_string = "Nike & ";
+//    char const  *second_string = "Adidas";
+//    */
+//    printf("%s", ft_strjoin(first_string, second_string));
+//    return (0);
+// }
 
 char    *ft_strjoin(char const *s1, char const *s2)
 {
@@ -86,4 +86,3 @@ char    *ft_strjoin(char const *s1, char const *s2)
    ((char *)ptr2joined)[tracker] = 0;
    return ((char *)ptr2joined);
 }
-

@@ -11,16 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <fcntl.h>
-
-int	main(void)
-{
-	int	nbr = -5637843;
-	//int	wtf = open("./test.c", O_RDWR);
-	ft_putnbr_fd(nbr, 1);
-	return (0);
-}
+// #include <stdio.h>
+// #include <fcntl.h>
+// int	main(void)
+// {
+// 	int	nbr = -5637843;
+// 	//int	wtf = open("./test.c", O_RDWR);
+// 	ft_putnbr_fd(nbr, 1);
+// 	return (0);
+// }
 /*
 //Without recursion method (too long though)
 void ft_putnbr_fd(int n, int fd)

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 int main(void)
 {
     int nbr;
@@ -20,6 +20,7 @@ int main(void)
     printf("\nThis is the number that was inputed: %s", ft_itoa(nbr));
     return (0);
 }
+*/
 
 char *ft_itoa(int n)
 {

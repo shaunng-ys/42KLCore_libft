@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-int main(void)
-{
-    char const *string = "Give this a try";
-    unsigned int starting_char = 5;
-    size_t max = 40;
-    printf("%s", ft_substr(string, starting_char, max));
-    return (0);
-}
+// int main(void)
+// {
+//     char const *string = "Give this a try";
+//     unsigned int starting_char = 5;
+//     size_t max = 40;
+//     printf("%s", ft_substr(string, starting_char, max));
+//     return (0);
+// }
 
 /*
 Function name: ft_substr

@@ -12,17 +12,17 @@
 
 #include "libft.h"
 
-char    add_one(unsigned int i, char c)
-{
-    return (i + c);
-}
+// char    add_one(unsigned int i, char c)
+// {
+//     return (i + c);
+// }
 
-int main(void)
-{
-    char    *string = "12345";
-    printf("This is result of from the application of ft_strmapi: %s", ft_strmapi(string, add_one));
-    return (0);
-}
+// int main(void)
+// {
+//     char    *string = "12345";
+//     printf("This is result of from the application of ft_strmapi: %s", ft_strmapi(string, add_one));
+//     return (0);
+// }
 
 char *ft_strmapi(char const *s, char (*f)(unsigned
 int, char))

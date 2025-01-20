@@ -11,15 +11,14 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <fcntl.h>
+// #include <fcntl.h>
 
-int	main(void)
-{
-	int fd = open("./test.c", O_RDWR);
-	ft_putchar_fd('c', fd);
-	return (0);
-}
-
+// int	main(void)
+// {
+// 	int fd = open("./test.c", O_RDWR);
+// 	ft_putchar_fd('c', fd);
+// 	return (0);
+// }
 void ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);

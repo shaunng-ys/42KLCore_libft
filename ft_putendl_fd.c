@@ -11,15 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <fcntl.h>
+// #include <fcntl.h>
 
-int	main(void)
-{
-	int	fd = open("./test.c", O_RDWR);
-	char	*string1 = "This is the 2nd string for testing";
-	ft_putendl_fd(string1, fd);
-	return (0);
-}
+// int	main(void)
+// {
+// 	int	fd = open("./test.c", O_RDWR);
+// 	char	*string1 = "This is the 2nd string for testing";
+// 	ft_putendl_fd(string1, fd);
+// 	return (0);
+// }
 
 void	ft_putendl_fd(char *s, int fd)
 {
