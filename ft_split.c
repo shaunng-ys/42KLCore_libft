@@ -11,132 +11,168 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 int	main(void)
 {
-	char	*origin_string = "This is a string that is the original string and I'm supposed to be able to use this ft_split function to split the string into smaller strings and fit them into an array.";
-	char	**double_ptr;
-	char	delimiter = ' ';
-	int	i = 0;
-	int	counter = 0;
+	char const	*origin_string = "This is a string that is the original string and I'm supposed to be able to use this ft_split function to split the string into smaller strings and fit them into an array.";
+	char		**double_ptr;
+	char		delimiter = ' ';
+	int			i = 0;
+	int			counter = 1;
 
 	double_ptr = ft_split(origin_string, delimiter);
-	while(double_ptr[i])
+	while(double_ptr[i] != NULL)
 	{
-		printf("This is string no.%d: %s", counter, double_ptr[i]);
+		printf("This is string no.%d: %s\n", counter, double_ptr[i]);
 		i++;
 		counter++;
 	}
 	return (0);
 }
-
-int	word_count(char *string, char c)
+*/
+int	word_count(char const *string, char separator)
 {
 	int	i;
+	int	counter;
+	int	toggle;
 
 	i = 0;
-	while (string[i] != c && string[i] != 0)
+	counter = 0;
+	while (string[i] != 0)
 	{
+		if (string[i] != separator && string[i])
+			counter++;
+		while (string[i] != separator && string[i])
+			i++;
+		while (string[i] == separator)
+			i++;
+	}
+	return (counter);
+}
+
+int	*array_of_word_lens(char const *string, char delimiter, int nbr_of_words)
+{
+	int	i;
+	int	j;
+	int	counter;
+	int	*sequence_of_numbers;
+
+	i = 0;
+	j = 0;
+	counter = 0;
+	sequence_of_numbers = malloc(nbr_of_words + 1 * sizeof(int));
+	while (string[i])
+	{
+		while (string[i] != delimiter && string[i])
+		{
+			counter++;
+			i++;
+		}
+		sequence_of_numbers[j++] = counter;
+		counter = 0;
+		while (string[i] != delimiter && string[i])
+			i++;
+		while (string[i] == delimiter)
+			i++;
+	}
+	sequence_of_numbers[j] = -1;
+	return (sequence_of_numbers);
+}
+
+char	*string_transplanter(char const *s, int ind, int string_length, char c)
+{
+	char	*temp_string;
+	int		i;
+
+	i = 0;
+	temp_string = malloc((string_length + 1) * (sizeof(char)));
+	while (s[ind] != c && s[ind])
+	{
+		temp_string[i] = s[ind];
 		i++;
-		if (string[i] == c)
-			c++;
+		ind++;
 	}
-	return (c);
+	temp_string[i] = 0;
+	return (temp_string);
 }
 
-int	*array_of_word_lens(char *string, char delimiter)
-{
-	int	i;
-	int	nbr_of_words;
-	
-	i = 0;
-	nbr_of_words = word_count(string, delimiter);
-	while (string[i] != delimiter && string[i] != 0)
-	{
-		if (string[0] != delimiter)
+/*The immediate code below was an attempt at a function to fill allocated memory spaces with substrings*/
+// char	**string_transplanter(char **double_array, char const *s, int *string_lengths, char c)
+// {
+// 	char	*temp_string;
+// 	int	i;
+// 	int	j;
+// 	int	k;
+// 	int	l;
+// 	int	counter;
 
+// 	i = 0;
+// 	j = 0;
+// 	k = 0;
+// 	l = 0;
+// 	counter = 0;
+// 	while (s[i] != c && s[i])
+// 	{
+// 		if (s[i] != c && s[i])
+// 		{
+// 			while (s[j] != c && s[j])
+// 			{
+// 				counter++;
+// 				j++;
+// 			}
+// 			j = i;
+// 			temp_string = malloc((counter + 1) * sizeof(char));
+// 			temp_string[counter] = 0;
+// 			while (k < counter)
+// 			{
+// 				temp_string[k] = s[i];
+// 				k++;
+// 				i++;
+// 			}
+// 			k = 0;
+// 			counter = 0;
+// 			double_array[l] = temp_string;
+// 			l++;
+// 			free(temp_string);
+// 		}
+// 		while (s[i] == c)
+// 			i++;
+// 	}
+// 	return (double_array);
+// }
+char	**ft_split(char const *s, char c)
+{
+	char	**two_d_array;
+	int		i;
+	int		j;
+	int		k;
+	int		*len_of_string;
+
+	i = 0;
+	len_of_string = array_of_word_lens(s, c, word_count(s, c));
+	two_d_array = malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (two_d_array == 0)
+		return (0);
+	two_d_array[word_count(s, c)] = malloc(1 * sizeof(char));
+	two_d_array[word_count(s, c)] = NULL;
+	while (i < word_count(s, c))
+	{
+		two_d_array[i] = malloc((len_of_string[i] + 1) * sizeof(char));
 		i++;
-		if (string[i] == delimiter)
-			c++;
 	}
-	return (c);
-}
-
-char **ft_split(char const *s, char c)
-{
-	int	nbr_of_words;
-	int	i;
-
 	i = 0;
-	nbr_of_words = word_count(s, c);
-	char	**double_array = (char **)malloc((nbr_of_words + 1) * sizeof(char*));
-	while(i < nbr_of_words)
-	{
-		double_array[i] = (char*)malloc()
-	}
-
-
-}
-
-
-/*
-char **ft_split(char const *s, char c)
-{   	
-	char	**double_array;
-	int	nbr_of_words;
-	int	i;
-
-	i = 0;
-	nbr_of_words = word_count(s, c);
-	/* allocate an array big enough to hold all the words in s */
-	/* loop over the string and find the start of the word */
-    /* find the end of the word */
-    /* copy the world at the first free index in our words array */
-	/* return our words array */
+	j = 0;
+	k = 0;
 	while (s[i])
 	{
-
+		if (s[i] != c && s[i])
+		{
+			two_d_array[k++] = string_transplanter(s, i, len_of_string[j++], c);
+			while (s[i] != c && s[i])
+				i++;
+		}
+		while (s[i] == c)
+			i++;
 	}
-
-	double_array = (char**)malloc((nbr_of_words + 1) * sizeof(char *));
-    double_array[nbr_of_words] = 0;
-	while (double_array[i])
-	{
-		double_array[i] = (char *)malloc(word_size * sizeof(char));
-		i++;
-	}
-
+	return (two_d_array);
 }
-
-int	word_count(char *string, char c)
-{
-	int	i;
-
-	i = 0;
-	while (string[i] != c && string[i] != 0)
-	{
-		i++;
-		if (string[i] == c)
-			c++;
-	}
-}
-
-char	*fill_word(char *ptr, int i, char d)
-{
-	char	*word;
-	int	j;
-	/* allocate enough room for the word */
-	word = (char *)malloc(i + 1 * sizeof(char));
-	j = 0;
-	/* copy the word into the memory you allocated above */
-	while (ptr[j] != d)
-	{
-		word[j] = ptr[j];
-		j++;
-	}
-	word[j] = 0;
-	/* return the allocated word */
-	return (word);
-}
-*/
-
