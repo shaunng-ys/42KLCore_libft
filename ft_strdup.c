@@ -23,29 +23,29 @@ int main(void)
 }
 */
 
-char    *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-    int i;
-    int counter;
-    void    *ptr;
+	int		i;
+	int		counter;
+	void	*ptr;
 
-    i = 0;
-    counter = 0;
-    while (s[i])
-    {
-        i++;
-        counter++;
-    }
-    i = 0;
-    ptr = malloc (counter * sizeof(char));
-    if (ptr == 0)
-        return (0);
-    while (counter)
-    {
-        ((char *)ptr)[i] = s[i];
-        i++;
-        counter--;
-    }
-    ((char *)ptr)[i] = 0;
-    return (ptr);
+	i = 0;
+	counter = 0;
+	while (s[i])
+	{
+		i++;
+		counter++;
+	}
+	i = 0;
+	ptr = malloc (counter * sizeof(char));
+	if (ptr == 0)
+		return (0);
+	while (counter)
+	{
+		((char *)ptr)[i] = s[i];
+		i++;
+		counter--;
+	}
+	((char *)ptr)[i] = 0;
+	return (ptr);
 }
