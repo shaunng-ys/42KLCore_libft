@@ -28,19 +28,19 @@ int main(void)
     return (0);
 }
 */
-void    *ft_memcpy(void *dest_str, const void *src_str, size_t n)
+void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {
-    unsigned int value_size;
-    int i;
+	unsigned int	value_size;
+	int				i;
 
-    i = 0;
-    value_size = sizeof(dest_str[i]);
-    while(n)
-    {
-        ((char *)dest_str)[i] = ((char *)src_str)[i];
-        i++;
-        n = n - value_size;
-    }
-    ((char *)dest_str)[i] = 0;
-    return (dest_str);
+	i = 0;
+	value_size = sizeof(dest_str[i]);
+	while (n)
+	{
+		((char *)dest_str)[i] = ((char *)src_str)[i];
+		i++;
+		n = n - value_size;
+	}
+	((char *)dest_str)[i] = 0;
+	return (dest_str);
 }
