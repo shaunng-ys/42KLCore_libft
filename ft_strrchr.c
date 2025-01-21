@@ -17,9 +17,9 @@ char    *ft_strrchr(const char *s, int c);
 int main(void)
 {
     int a;
-    char    *str = "This is an example of a string";
+    char    *str = "bonjour";
 
-    a = 'i';
+    a = 'b';
     printf("%s", ft_strrchr(str, a));
     return (0);
 }
@@ -43,6 +43,8 @@ char	*ft_strrchr(const char *s, int c)
 		{
 			if (s[i] == c)
 				return ((char *)(s + i));
+			else if (s[i - 1] == c)
+				return ((char *)(s + i - 1));
 			i--;
 		}
 		return (0);
