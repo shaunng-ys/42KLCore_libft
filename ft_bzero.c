@@ -17,24 +17,24 @@ void    ft_bzero(void *s, size_t n);
 
 int main(void)
 {
-    char    s[100] = "This string should be non-printable after passing the ft_bzero function";
+    char    s[100] = "This string should be non-printable";
     size_t  nbr = sizeof(char)*4;
 
     printf("%s\n", s);
     ft_bzero(s, nbr);
-    printf("This is the output after the former string has passed through the ft_bzero function: %s\n\n", s);
+    printf("This is the output after the former string has passed through);
     return (0);
 }
 */
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (n)
-    {
-        ((char*)s)[i] = 0;
-        i++;
-        n--;
-    }
+	i = 0;
+	while (n)
+	{
+		((char *)s)[i] = 0;
+		i++;
+		n--;
+	}
 }
