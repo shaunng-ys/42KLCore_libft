@@ -46,8 +46,8 @@ void ft_ascii(char *arr)
 void	*ft_memset(void *str, int c, size_t n)
 {
 	int	i;
-		
-	i = 0;	
+
+	i = 0;
 	while (n)
 	{
 		((char *)str)[i] = c;
