@@ -40,27 +40,26 @@ int main(void)
     return (0);
 }
 */
-size_t    ft_strlcpy(char *dst, const char *src, size_t dst_size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size)
 {
-    int i;
-    size_t  cntr;
+	int		i;
+	size_t	cntr;
 
-    i = 0;
-    cntr = 0;
-    while (dst_size > 1 && src[i])
-    {
-        dst[i] = src[i];
-        i++;
-        dst_size--;
-    }
-
+	i = 0;
+	cntr = 0;
+	while (dst_size > 1 && src[i])
+	{
+		dst[i] = src[i];
+		i++;
+		dst_size--;
+	}
 	if (dst_size != 0)
-    	dst[i] = 0;
-    i = 0;
-    while (src[i])
-    {
-        i++;
-        cntr++;
-    }
-    return (cntr);
+		dst[i] = 0;
+	i = 0;
+	while (src[i])
+	{
+		i++;
+		cntr++;
+	}
+	return (cntr);
 }
