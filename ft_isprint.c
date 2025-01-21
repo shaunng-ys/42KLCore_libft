@@ -21,14 +21,14 @@ int	main(void)
 
 	c0 = '\n';
 	c1 = 'a';
-	printf("%d\n", ft_isprint(c0));
+	printf("%d\n", ft_isprint(126));
 	printf("%d\n", ft_isprint(c1));
 	return (0);
 }
 */
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 32 && c < 127)
 		return (1);
 	else
 		return (0);
