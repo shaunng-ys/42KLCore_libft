@@ -25,30 +25,29 @@ int main(void)
     return (0);
 }
 */
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (c == 0)
-    {
-        while (s[i])
-        {
-            i++;
-        }
-        return ((char *)(s + i + 1));
-    }
-
-    else
-    {
-        while (s[i] != c)
-        {
-            if (s[i] == 0)
-            {
-                return (0);
-            }
-            i++;
-        }
-        return ((char *)(s + i));
-    }
+	i = 0;
+	if (c == 0)
+	{
+		while (s[i])
+		{
+			i++;
+		}
+		return ((char *)(s + i));
+	}
+	else
+	{
+		while (s[i] != c)
+		{
+			if (s[i] == 0)
+			{
+				return (0);
+			}
+			i++;
+		}
+		return ((char *)(s + i));
+	}
 }
