@@ -38,14 +38,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	i = 0;
 	store = (nmemb * size);
-	//printf("%zu\n", store);
-	//counter = nmemb;
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));
 	if (size == ((size_t) - 1) / nmemb)
 		return (NULL);
 	ptr = (malloc(nmemb * size));
-	//use bzero || use while loop to decrement size_t * nmemb until it's zero 
 	while (store)
 	{
 		((char *)ptr)[i] = 0;
