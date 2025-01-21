@@ -20,8 +20,8 @@ int main(void)
     int nbr;
 
     nbr = 'k';
-    //printf("%p", ft_strchr(str, nbr));
-    printf("%s", ft_strchr(str, nbr));
+    printf("%s", ft_strchr(str, 't' + 256));
+    //printf("%s", ft_strchr(str, nbr));
     return (0);
 }
 */
@@ -30,12 +30,11 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
+	c = (char)c;
 	if (c == 0)
 	{
 		while (s[i])
-		{
 			i++;
-		}
 		return ((char *)(s + i));
 	}
 	else
@@ -43,9 +42,7 @@ char	*ft_strchr(const char *s, int c)
 		while (s[i] != c)
 		{
 			if (s[i] == 0)
-			{
 				return (0);
-			}
 			i++;
 		}
 		return ((char *)(s + i));
