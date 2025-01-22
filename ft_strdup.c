@@ -12,16 +12,14 @@
 
 #include "libft.h"
 
-/*
-int main(void)
-{
-    const char  *src_str = "Duplicate this, b****!";
-    char    *ptr2dup;
-    ptr2dup = ft_strdup(src_str);
-    printf("%p\n%s", ptr2dup, ptr2dup);    
-    return (0);
-}
-*/
+// int main(void)
+// {
+//     const char  *src_str = "lorem ipsum dolor sit amet";
+//     char    *ptr2dup;
+//     ptr2dup = ft_strdup(src_str);
+//     printf("%p\n%s", ptr2dup, ptr2dup);    
+//     return (0);
+// }
 
 char	*ft_strdup(const char *s)
 {
@@ -37,7 +35,7 @@ char	*ft_strdup(const char *s)
 		counter++;
 	}
 	i = 0;
-	ptr = malloc (counter * sizeof(char));
+	ptr = malloc ((counter + 1) * sizeof(char));
 	if (ptr == 0)
 		return (0);
 	while (counter)

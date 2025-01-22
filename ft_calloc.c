@@ -15,10 +15,10 @@
 int main(void)
 {
     void *memspace_ptr;
-    int counter = 5 * sizeof(char);
+    int counter = 30 * sizeof(char);
     int i = 0;
 
-    memspace_ptr = ft_calloc(5, sizeof(char));
+    memspace_ptr = ft_calloc(30, sizeof(char));
     printf("%p\n", memspace_ptr);
     while (counter)
     {
@@ -29,25 +29,25 @@ int main(void)
     return (0);
 }
 */
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
-	int		i;
-	size_t	counter;
+	size_t	i;
 	size_t	store;
 
 	i = 0;
-	store = (nmemb * size);
-	if (nmemb == 0 || size == 0)
+	store = (count * size);
+	if (count == 0 || size == 0)
 		return (malloc(0));
-	if (size == ((size_t) - 1) / nmemb)
+	if (size == ((size_t) - 1) / count)
 		return (NULL);
-	ptr = (malloc(nmemb * size));
-	while (store)
+	ptr = (malloc(count * size));
+	if (ptr == 0)
+		return (0);
+	while (i < store)
 	{
 		((char *)ptr)[i] = 0;
 		i++;
-		store--;
 	}
 	return (ptr);
 }
