@@ -11,23 +11,23 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-int main(void)
-{
-    void *memspace_ptr;
-    int counter = 30 * sizeof(char);
-    int i = 0;
 
-    memspace_ptr = ft_calloc(30, sizeof(char));
-    printf("%p\n", memspace_ptr);
-    while (counter)
-    {
-        printf("%d", ((char *)memspace_ptr)[i]);
-        i++;
-        counter--;
-    }
-    return (0);
-}
+// int main(void)
+// {
+//     void *memspace_ptr;
+//     int counter = 30 * sizeof(char);
+//     int i = 0;
+
+//     memspace_ptr = ft_calloc(30, sizeof(char));
+//     printf("%p\n", memspace_ptr);
+//     while (counter)
+//     {
+//         printf("%d", ((char *)memspace_ptr)[i]);
+//         i++;
+//         counter--;
+//     }
+//     return (0);
+// }
 
 void	*ft_calloc(size_t count, size_t size)
 {
