@@ -12,48 +12,43 @@
 
 #include "libft.h"
 /*
-ft_strlcat(3bsd - from man strlcat)
-              Copy and catenate the input string into a destination
-              string.  If the destination buffer, limited by its size,
-              isn't large enough to hold the copy, the resulting string
-              is truncated (but it is guaranteed to be null-terminated).
-              They return the length of the total string they tried to
-              create.
-
-size_t  ft_strlcat(char *dst, const char *src, size_t dstsize);
-*/
-
 int main(void)
 {
-    char    memspace4string0[1000] = {'T', 'h', 'i', 's'};
-    //char    *dst_string0 = &(memspace4string0[0]);
-    const char  source_string0[] = {' ', 'B', 'a', 'l', 'l', 'o', 'o', 'n'};
-    //char    *src_string0 = source_string0;
-    size_t  destination_size0 = 103;
-/*
-    char    memspace4string1[1000] = "This is the destination string, and after this is what is appende: ";
-    const char  *source_string1 = "Balloon animals fly towards the sun.";
-    size_t  destination_size1 = 103;
-*/
-    strlcat(memspace4string0, source_string0, destination_size0);
-    printf("%s", memspace4string0);//, strlcat(memspace4string0, source_string0, destination_size0));
-    //printf("%s , %d\n", memspace4string1, strlcat(memspace4string1, source_string1, destination_size1));
-    return (0);
-}
-
-/*
-int main(void)
-{
-    char    memspace4string[1000] = "This is the destination string, and after this is what is appende: ";
+    char    strspace[32] = "This is the destination string ";
     const char  *source_string = "Balloon animals fly towards the sun.";
-    size_t  destination_size = 103;
-    printf("%s", ft_strlcat(memspace4string, source_string, destination_size));
+    size_t  destination_size = 0;
+    printf("%zu\n", ft_strlcat(strspace, source_string, destination_size));
+	printf("%s\n", strspace);
+
+	printf("%zu\n", strlcat(strspace, source_string, destination_size));
+	printf("%s\n", strspace);
     return (0);
 }
-
-size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
-{
-    //Check to see if both dst & src are true strings i.e. have nul terminating characters at the end
-
-}
 */
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t	dst_len;
+	size_t	dstsize_copy;
+	int		i;
+	int		j;
+
+	dst_len = ft_strlen(dst);
+	dstsize_copy = dstsize;
+	i = dst_len;
+	j = 0;
+	if (dstsize <= dst_len)
+		return (dstsize + ft_strlen(src));
+	if (dstsize > ft_strlen(src) + dst_len)
+	{
+		while (src[j])
+			dst[i++] = src[j++];
+		dst[i] = 0;
+	}
+	else if (dstsize_copy >= dst_len + 1)
+	{
+		while (dstsize_copy-- > dst_len + 1)
+			dst[i++] = src[j++];
+		dst[i] = 0;
+	}
+	return (dst_len + ft_strlen(src));
+}

@@ -30,11 +30,10 @@ int	main(void)
 	return (0);
 }
 */
-int	word_count(char const *string, char separator)
+static int	word_count(char const *string, char separator)
 {
 	int	i;
 	int	counter;
-	int	toggle;
 
 	i = 0;
 	counter = 0;
@@ -50,7 +49,7 @@ int	word_count(char const *string, char separator)
 	return (counter);
 }
 
-int	*array_of_word_lens(char const *string, char delimiter, int nbr_of_words)
+static int	*array_of_word_lens(char const *string, char delimiter, int nbr_of_words)
 {
 	int	i;
 	int	j;
@@ -79,7 +78,7 @@ int	*array_of_word_lens(char const *string, char delimiter, int nbr_of_words)
 	return (sequence_of_numbers);
 }
 
-char	*string_transplanter(char const *s, int ind, int string_length, char c)
+static char	*string_transplanter(char const *s, int ind, int string_length, char c)
 {
 	char	*temp_string;
 	int		i;

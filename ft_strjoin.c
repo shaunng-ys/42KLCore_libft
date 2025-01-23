@@ -65,10 +65,9 @@ char    *ft_strjoin(char const *s1, char const *s2)
       counter++;
       i++;
    }
-   if (malloc(counter + 1) == NULL)
+   ptr2joined = malloc(counter + 1);
+   if (ptr2joined == NULL)
       return (0);
-   else
-      ptr2joined = malloc(counter + 1);
    i = 0;
    while(s1[i])
    {

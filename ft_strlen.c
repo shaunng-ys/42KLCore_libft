@@ -11,20 +11,20 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
+
 size_t	ft_strlen(const char *s);
 
-int	main(void)
-{
-	size_t		r;
-	const char	*str;
+// int	main(void)
+// {
+// 	size_t		r;
+// 	const char	*str;
 
-	str = "Apple Macbook Pro 16";
-	r = ft_strlen(str);
-	printf("%zu\n", r);
-	return (0);
-}
-*/
+// 	str = "Apple Macbook Pro 16";
+// 	r = ft_strlen(str);
+// 	printf("%zu\n", r);
+// 	return (0);
+// }
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	nbr_of_char;

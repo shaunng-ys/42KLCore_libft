@@ -28,6 +28,14 @@ int main(void)
     return (0);
 }
 */
+// int	main(void)
+// {
+// 	void *mem = malloc(sizeof(*mem) * 30);
+// 	memset(mem, 'j', 30);
+
+//     printf("%s\n", (char *)ft_memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 14));
+// 	return (0);
+// }
 void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {
 	unsigned int	value_size;
@@ -41,6 +49,5 @@ void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 		i++;
 		n = n - value_size;
 	}
-	((char *)dest_str)[i] = 0;
 	return (dest_str);
 }

@@ -28,7 +28,7 @@ int main(void)
     }
     return (0);
 }
-*/
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
@@ -38,8 +38,14 @@ void	*ft_calloc(size_t count, size_t size)
 	i = 0;
 	store = (count * size);
 	if (count == 0 || size == 0)
-		return (malloc(0));
+	{
+		ptr = malloc(1);
+		((char *)ptr)[0] = 0;
+		return (ptr);
+	}
 	if (size == ((size_t) - 1) / count)
+		return (NULL);
+	if (size >= 2147483647 / count)
 		return (NULL);
 	ptr = (malloc(count * size));
 	if (ptr == 0)

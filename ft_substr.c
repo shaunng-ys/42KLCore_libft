@@ -14,9 +14,9 @@
 
 // int main(void)
 // {
-//     char const *string = "Give this a try";
-//     unsigned int starting_char = 5;
-//     size_t max = 40;
+//     char const *string = "lorem ipsum dolor sit amet";
+//     unsigned int starting_char = 400;
+//     size_t max = 20;
 //     printf("%s", ft_substr(string, starting_char, max));
 //     return (0);
 // }
@@ -35,51 +35,29 @@ Description: Allocates (with malloc(3)) and returns a substring
 from the string ’s’.
 The substring begins at index ’start’ and is of maximum size ’len’.
 */
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    int     i;
-    int     counter;
-    char    *ptr0;
-    void    *ptr1;
-    size_t  str_len = ft_strlen(s);
-    
-    i = 0;
-    counter = 0;
-    /*
-    DESCRIPTION
-       The  memchr()  function scans the initial n bytes of the memory area pointed to by s for the first instance of
-       c.  Both c and the bytes of the memory area pointed to by s are interpreted as unsigned char.
-    RETURN VALUE
-       The  memchr()  and memrchr() functions return a pointer to the matching byte or NULL if the character does not
-       occur in the given memory area.
+	int				i;
+	unsigned int	counter;
+	char			*ptr0;
+	void			*ptr1;
 
-    void    *ft_memchr(const void *s, int c, size_t n);
-    */
-    //Need to guard against user input if no start character in s
-    /*
-    ptr0 = ft_memchr((char *)s, start, str_len);
-    */
-    ptr0 = (char *)s + start - 1;
-    
-    while ((ptr0)[i])
-    {
-        counter++;
-        i++;
-    }
-    i = 0;
-    if (counter <= len)
-        ptr1 = malloc(counter);
-    else
-        ptr1 = malloc(len);
-    if (ptr1 == NULL)
-        return (NULL);
-    else
-        while((len != 0) && (((char *)ptr0)[i] != 0))
-        {
-            ((char *)ptr1)[i] = ((char *)ptr0)[i];
-            i++;
-            len--;
-        }
-        ((char *)ptr1)[i] = '\0';
-    return (ptr1);
+	i = 0;
+	counter = ft_strlen(s);
+	if (start > counter)
+		return (ft_calloc(1, 1));
+	ptr0 = (char *)s + start;
+	i = 0;
+	if (counter <= len)
+		ptr1 = ft_calloc((counter + 1), sizeof(char));
+	else
+		ptr1 = ft_calloc((len + 1), sizeof(char));
+	if (ptr1 == NULL)
+		return (NULL);
+	while (len-- != 0 && counter-- != 0)
+	{
+		((char *)ptr1)[i] = ((char *)ptr0)[i];
+		i++;
+	}
+	return (ptr1);
 }

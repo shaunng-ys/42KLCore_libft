@@ -26,7 +26,6 @@ char *ft_itoa(int n)
 {
     int placeholder;
     int nbr_of_places;
-    int sign;
     char *string;
 
     placeholder = n;

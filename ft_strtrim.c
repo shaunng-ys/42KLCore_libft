@@ -30,14 +30,14 @@ Allocates (with malloc(3)) and returns a copy of
 from the beginning and the end of the string.
 */
 
-int main(void)
-{
-    char const  *base_string = "Unnecessarily-pink-nun";
-    char const  *remove_this = "";
-    // printf("testing");
-    printf("%s\n", ft_strtrim(base_string, remove_this));
-    return (0);
-}
+// int main(void)
+// {
+//     char const  *base_string = "Unnecessarily-pink-nun";
+//     char const  *remove_this = "";
+//     // printf("testing");
+//     printf("%s\n", ft_strtrim(base_string, remove_this));
+//     return (0);
+// }
 
 char    *ft_strtrim(char const *s1, char const *set)
 {
@@ -54,15 +54,11 @@ char    *ft_strtrim(char const *s1, char const *set)
     k = 0;
     start = (char *)s1;
     end = (char *)s1;
-    while (s1[i] != '\0')
-    {
+    while (s1[i++] != '\0')
         end++;
-        i++;
-    }
     end--;
     end_reference = end;
     i = 0;
-
     while (s1[i] != '\0')
     {
         if (s1[i] == set[j])
@@ -95,13 +91,9 @@ char    *ft_strtrim(char const *s1, char const *set)
         else if (s1[k] != set[j])
         {
             while (s1[k] != set[j] && set[j])
-            {
                 j++;
-            }
             if (s1[k] != set[j] || set[j] == '\0')
-            {
                 k = 10000;
-            }
         }
         if (k == 10000)
             break;
@@ -111,11 +103,10 @@ char    *ft_strtrim(char const *s1, char const *set)
         return (0);
     new_string[end - start + 1] = '\0';
     k = end - start + 1;
-    while (k > 0)
+    while (k-- > 0)
     {
         new_string[i] = start[i];
         i++;
-        k--;
     }
     return (new_string);
 }
