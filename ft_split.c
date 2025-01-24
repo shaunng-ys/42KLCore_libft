@@ -12,23 +12,31 @@
 
 #include "libft.h"
 
-int	main(void)
-{
-	char const	*origin_string = "Tripoulli";
-	char		**double_ptr;
-	char		delimiter = 0;
-	int			i = 0;
-	int			counter = 1;
+// int	main(void)
+// {
+// 	char const	*origin_string = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+// 	char		**double_ptr;
+// 	char		delimiter = ' ';
+// 	int			i = 0;
+// 	int			counter = 1;
 
-	double_ptr = ft_split(origin_string, delimiter);
-	while(double_ptr[i] != NULL)
-	{
-		printf("This is string no.%d: %s\n", counter, double_ptr[i]);
-		i++;
-		counter++;
-	}
-	return (0);
-}
+// 	double_ptr = ft_split(origin_string, delimiter);
+// 	while(double_ptr[i] != NULL)
+// 	{
+// 		printf("This is string no.%d: %s\n", counter, double_ptr[i]);
+// 		i++;
+// 		counter++;
+// 	}
+// 	i = 0;
+// 	while (double_ptr[i] != NULL)
+// 	{
+// 		free(double_ptr[i]);
+// 		i++;
+// 	}
+// 	free(double_ptr[i]);
+// 	free(double_ptr);
+// 	return (0);
+// }
 
 static int	word_count(char const *string, char separator)
 {
@@ -43,7 +51,7 @@ static int	word_count(char const *string, char separator)
 			counter++;
 		while (string[i] != separator && string[i])
 			i++;
-		while (string[i] == separator)
+		while (string[i] == separator && string[i])
 			i++;
 	}
 	return (counter);
@@ -68,10 +76,11 @@ static int	*lens_array(char const *string, char delimiter, int nbr_of_words)
 			counter++;
 		sequence_of_numbers[j++] = counter;
 		counter = 0;
+		// Can remove
 		while (string[i] != delimiter && string[i++])
 			;
-		while (string[i++] == delimiter)
-			;
+		while (string[i] == delimiter && string[i])
+			i++;
 	}
 	sequence_of_numbers[j] = -1;
 	return (sequence_of_numbers);
@@ -97,27 +106,28 @@ static char	*string_move(char const *s, int ind, int string_length, char c)
 
 static char	**dou_arr(int nbr_of_words, int *string_lengths)
 {
+	(void) string_lengths;
 	char	**double_array;
-	int		i;
+	// int		i;
 
-	i = 0;
+	// i = 0;
 	double_array = malloc((nbr_of_words + 1) * sizeof(char *));
 	if (double_array == 0)
 		return (0);
-	double_array[nbr_of_words] = malloc(1 * sizeof(char));
+	// double_array[nbr_of_words] = malloc(1 * sizeof(char));
 	double_array[nbr_of_words] = NULL;
-	while (i < nbr_of_words)
-	{
-		double_array[i] = malloc((string_lengths[i] + 1) * sizeof(char));
-		if (double_array[i] == 0)
-		{
-			while (i--)
-				free(double_array[i]);
-			free(double_array);
-			return (0);
-		}
-		i++;
-	}
+	// while (i < nbr_of_words)
+	// {
+	// 	double_array[i] = malloc((string_lengths[i] + 1) * sizeof(char));
+	// 	if (double_array[i] == 0)
+	// 	{
+	// 		while (i--)
+	// 			free(double_array[i]);
+	// 		free(double_array);
+	// 		return (0);
+	// 	}
+	// 	i++;
+	// }
 	return (double_array);
 }
 
@@ -132,8 +142,6 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	len_of_string = lens_array(s, c, word_count(s, c));
 	two_d_array = dou_arr(word_count(s, c), len_of_string);
-	printf("len_of_string:%d", len_of_string[0]);
-	printf("yes");
 	j = 0;
 	k = 0;
 	while (s[i])
@@ -144,8 +152,9 @@ char	**ft_split(char const *s, char c)
 			while (s[i] != c && s[i++])
 				;
 		}
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
 	}
+	free(len_of_string);
 	return (two_d_array);
 }

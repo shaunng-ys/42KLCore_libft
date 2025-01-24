@@ -16,22 +16,21 @@
 // {
 // 	*pointer += 32;
 // }
-
 // int	main(void)
 // {
 // 	char	string[] = "THIS IS A STRING";
 // 	printf("This is the original string: %s\n", string);
 // 	ft_striteri(string, test_function);
-// 	printf("The is the string (after passing through ft_striteri): %s\n", string);
+// 	printf("The is the string (after ft_striteri): %s\n", string);
 // 	return (0);
 // }
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
-	
+
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		f(i, &s[i]);
 		i++;

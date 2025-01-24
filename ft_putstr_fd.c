@@ -17,14 +17,13 @@
 // {
 // 	int	fd;
 // 	char	*string;
-	
 // 	fd = open("./test.c", O_RDWR);
 // 	string = "This is a string";
 // 	ft_putstr_fd(string, fd);
 // 	return (0);
 // }
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 

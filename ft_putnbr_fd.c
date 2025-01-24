@@ -11,62 +11,21 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include <fcntl.h>
+
 // int	main(void)
 // {
-// 	int	nbr = -5637843;
+// 	int	nbr = -2147483648LL;
 // 	//int	wtf = open("./test.c", O_RDWR);
-// 	ft_putnbr_fd(nbr, 1);
+// 	ft_putnbr_fd(nbr, 2);
 // 	return (0);
 // }
-/*
-//Without recursion method (too long though)
-void ft_putnbr_fd(int n, int fd)
-{
-	int	i;
-	int	placeholder;
-	int	nbr_of_places;
-	char	string_of_int[12];
 
-	placeholder = n;
-	nbr_of_places = 0;
-	if (n < 0)
-		placeholder = placeholder * -1;
-	while (placeholder >= 10)
-	{
-		placeholder = placeholder / 10;
-		nbr_of_places++;
-	}
-	placeholder = n;
-	if (n < 0)
-	{
-		placeholder = placeholder * -1;
-		nbr_of_places++;
-		string_of_int[0] = '-';
-	}
-	string_of_int[nbr_of_places + 1] = '\0';
-	while (placeholder >= 10)
-	{
-		string_of_int[nbr_of_places] = (placeholder % 10) + 48;
-		placeholder = placeholder / 10;
-		nbr_of_places--;
-	}
-	string_of_int[nbr_of_places] = placeholder + 48;
-	i = 0;
-	while (string_of_int[i] != '\0')
-	{
-		write (fd, &string_of_int[i], 1);
-		i++;
-	}
-}
-*/
 
 void ft_putnbr_fd(int n, int fd)
 {
 	char	temp;
 
-	if (n == -2147483648)
+	if (n == -2147483648LL)
 	{
 		write(fd, "-2147483648", 12);
 	}

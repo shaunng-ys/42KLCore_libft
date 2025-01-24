@@ -43,45 +43,30 @@ of ’s1’ and ’s2’.
 //    return (0);
 // }
 
-char    *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-   int   i;
-   int   counter;
-   char  *ptr2joined;
-   int   tracker;
+	int		i;
+	int		counter;
+	char	*ptr2joined;
+	int		tracker;
 
-   i = 0;
-   counter = 0;
-   tracker = 0;
-   //Try to use strlen instead to cut lines of code
-   while(s1[i])
-   {
-      counter++;
-      i++;
-   }
-   i = 0;
-   while(s2[i])
-   {
-      counter++;
-      i++;
-   }
-   ptr2joined = malloc(counter + 1);
-   if (ptr2joined == NULL)
-      return (0);
-   i = 0;
-   while(s1[i])
-   {
-      ptr2joined[tracker] = s1[i];
-      i++;
-      tracker++;
-   }
-   i = 0;
-   while(s2[i])
-   {
-      ptr2joined[tracker] = s2[i];
-      i++;
-      tracker++;
-   }
-   ((char *)ptr2joined)[tracker] = 0;
-   return ((char *)ptr2joined);
+	i = 0;
+	counter = 0;
+	tracker = 0;
+	while (s1[i++])
+		counter++;
+	i = 0;
+	while (s2[i++])
+		counter++;
+	ptr2joined = malloc(counter + 1);
+	if (ptr2joined == NULL)
+		return (0);
+	i = 0;
+	while (s1[i])
+		ptr2joined[tracker++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		ptr2joined[tracker++] = s2[i++];
+	((char *)ptr2joined)[tracker] = 0;
+	return ((char *)ptr2joined);
 }
