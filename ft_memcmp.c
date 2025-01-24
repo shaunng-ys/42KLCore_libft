@@ -22,18 +22,13 @@
 //     const int   nbr_array1[] = {0, 1, 2, 3, 25};
 //     size_t limiter = sizeof(char) * 19;
 //     size_t limiter1 = sizeof(int) * 5;
-    
-    
 //     //Snippet for comparing with the original memcmp function
 //     int nbr_arr0[] = {0, 1, 2, 3, 65535};
 //     int nbr_arr1[] = {0, 1, 2, 3, 255};
 //     size_t limiter = 20 * sizeof(int);
 //     printf("%d", memcmp(((void *)nbr_arr0), ((void *)nbr_arr1), limiter));
- 
-    
 //     printf("%d\n", memcmp(str1, str2, limiter));
 //     printf("%d\n", memcmp(nbr_array0, nbr_array1, limiter1));
-    
 //     printf("%d\n", ft_memcmp(str1, str2, limiter));
 //     printf("%d\n", ft_memcmp(nbr_array0, nbr_array1, limiter1));
 //     return (0);
