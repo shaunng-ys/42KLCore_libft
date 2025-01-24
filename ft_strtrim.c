@@ -39,74 +39,155 @@ from the beginning and the end of the string.
 //     return (0);
 // }
 
-char    *ft_strtrim(char const *s1, char const *set)
+char	*start_point(char const *string1, char const *chars)
 {
-    char    *start;
-    char    *end;
-    char    *end_reference;
-    char    *new_string;
-    int i;
-    int j;
-    int k;
+	char	*start;
+	int		i;
+	size_t	j;
+	// int		k;
 
-    i = 0;
-    j = 0;
-    k = 0;
-    start = (char *)s1;
-    end = (char *)s1;
-    while (s1[i++] != '\0')
-        end++;
-    end--;
-    end_reference = end;
-    i = 0;
-    while (s1[i] != '\0')
-    {
-        if (s1[i] == set[j])
-        {
-            start++;
-            i++;
-            j = 0;
-        }
-        else if (s1[i] != set[j])
-        {
-            while (s1[i] != set[j] && set[j])
-                j++;
-            if (s1[i] != set[j] || set[j] == 0)
-                i = 10000;
-        }
-        if (i == 10000)
-            break;
-    }
-    i = 0;
-    j = 0;
-    k = end_reference - s1;
-    while (k > 0)
-    {
-        if (s1[k] == set[j])
-        {
-            end--;
-            k--;
-            j = 0;
-        }
-        else if (s1[k] != set[j])
-        {
-            while (s1[k] != set[j] && set[j])
-                j++;
-            if (s1[k] != set[j] || set[j] == '\0')
-                k = 10000;
-        }
-        if (k == 10000)
-            break;
-    }
-    new_string = (char *)malloc((end - start + 2) * sizeof(char));
-    if (new_string == 0)
-        return (0);
-    new_string[end - start + 1] = '\0';
-    k = end - start + 1;
-    while (k-- > 0)
-    {
-        new_string[i] = start[i];
-        i++;
-    }
-    return (new_string);
+	i = 0;
+	j = 0;
+	// k = 0;
+	start = (char *)string1;
+	while (string1[i] != '\0')
+	{
+		if (string1[i] == chars[j])
+		{
+			start++;
+			i++;
+			j = 0;
+		}
+		else if (string1[i] != chars[j])
+		{
+			while (string1[i] != chars[j] && chars[j])
+				j++;
+			if (string1[i] != chars[j] || chars[j] == 0)
+				i = -1;
+		}
+		if (i == -1)
+			break;
+	}
+	return (start);
 }
+
+char	*end_point(char const *string1, char const *chars)
+{
+	char	*end;
+	// int		i;
+	size_t	j;
+	int		k;
+	
+	end = (char *)string1;
+	// i = 0;
+	while (*end++)
+		;
+	end--;
+	k = ft_strlen(string1) - 1;
+	// printf("k: %d\n", k);
+	j = 0;
+	while (k > 0)
+	{
+		// printf("end: %s\n", end);
+		if (string1[k] == chars[j])
+		{
+			end--;
+			k--;
+			j = 0;
+		}
+		else if (string1[k] != chars[j])
+		{
+			while (string1[k] != chars[j] && chars[j])
+				j++;
+			if (string1[k] != chars[j] || chars[j] == '\0')
+				k = -1;
+		}
+		if (k == -1)
+			break;
+	}
+	return (end);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*start;
+	char	*end;
+	char	*new_string;
+	int		i;
+	// size_t	j;
+	int		k;
+
+	i = 0;
+	// j = 0;
+	// k = 0;
+	start = (char *)s1;
+	end = (char *)s1;
+	while (s1[i++] != '\0')
+		end++;
+	end--;
+	// i = 0;
+	//The immediate below loop is to move the start pointer
+	// while (s1[i] != '\0')
+	// {
+	// 	if (s1[i] == set[j])
+	// 	{
+	// 		start++;
+	// 		i++;
+	// 		j = 0;
+	// 	}
+	// 	else if (s1[i] != set[j])
+	// 	{
+	// 		while (s1[i] != set[j] && set[j])
+	// 			j++;
+	// 		if (s1[i] != set[j] || set[j] == 0)
+	// 			i = -1;
+	// 	}
+	// 	if (i == -1)
+	// 		break;
+	// }
+	start = start_point(s1, set);
+	// printf("start: %s\n", start);
+	if (start[0] == 0)
+		return (ft_calloc(1,1));
+	// j = 0;
+	// k = ft_strlen(s1) - 1;
+	//The immediate below loop is to move the end pointer
+	// while (k > 0)
+	// {
+	// 	if (s1[k] == set[j])
+	// 	{
+	// 		end--;
+	// 		k--;
+	// 		j = 0;
+	// 	}
+	// 	else if (s1[k] != set[j])
+	// 	{
+	// 		while (s1[k] != set[j] && set[j])
+	// 			j++;
+	// 		if (s1[k] != set[j] || set[j] == '\0')
+	// 			k = -1;
+	// 	}
+	// 	if (k == -1)
+	// 		break;
+	// }
+	end = end_point(s1, set);
+	// printf("end: %s\n", end);
+	i = 0;
+	new_string = (char *)malloc((end - start  + 1) * sizeof(char));
+	if (new_string == 0)
+		return (0);
+	new_string[end - start] = '\0';
+	k = end - start + 1;
+	while (--k > 0)
+	{
+		new_string[i] = start[i];
+		i++;
+	}
+	return (new_string);
+}
+
+// int main()
+// {
+// 	printf("%s\n", ft_strtrim("   xxxtripouille   xxx", " x"));
+// 	return (0);
+// }
