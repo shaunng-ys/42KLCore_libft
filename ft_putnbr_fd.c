@@ -20,14 +20,14 @@
 // 	return (0);
 // }
 
-
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	temp;
 
 	if (n == -2147483648LL)
 	{
-		write(fd, "-2147483648", 12);
+		write(fd, "-2147483648", 11);
+		return ;
 	}
 	if (n < 0)
 	{
@@ -40,4 +40,5 @@ void ft_putnbr_fd(int n, int fd)
 	}
 	temp = n % 10 + '0';
 	write(fd, &temp, 1);
+	return ;
 }

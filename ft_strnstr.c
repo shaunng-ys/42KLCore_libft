@@ -15,13 +15,12 @@
 // int main(void)
 // {
 // 	//Example from manual
-// 	const char	*largestring = "lorem ipsum dolor sit amet";
-// 	const char	*smallstring = "dolor";
+// 	const char	*largestring = "aaabcabcd";
+// 	const char	*smallstring = "aaabc";
 // 	char *ptr;
-
-// 	ptr = ft_strnstr(largestring, smallstring, 15);
+// 	ptr = ft_strnstr(largestring, smallstring, 5);
 // 	printf("%s\n", ptr);
-// 	printf("%s\n", strnstr(largestring, smallstring, 15));
+// 	printf("%s\n", strnstr(largestring, smallstring, 5));
 // 	return (0);
 // }
 
@@ -29,26 +28,47 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	tracer;
-	size_t	placeholder;
+	// size_t	placeholder;
 	size_t	len_copy;
 
 	i = 0;
-	placeholder = 0;
+	// placeholder = 0;
 	len_copy = len;
 	if (little[i] == 0)
 		return ((char *)big);
 	while (len-- != 0 && big[i])
 	{
 		tracer = 0;
-		len_copy = len;
-		while (big[placeholder++] == little[tracer] && len_copy-- != 0)
+		len_copy = len + 1;
+		while (big[i + tracer] == little[tracer] && len_copy-- != 0)
 		{
 			if ((tracer + 1) == ft_strlen(little))
 				return ((char *)big + i);
 			tracer++;
 		}
 		i++;
-		placeholder = i;
+		// placeholder = i;
 	}
 	return (0);
 }
+// char *ft_strnstr(const char *big, const char *little, size_t len)
+// {
+//     size_t i;
+//     size_t j;
+
+//     if (little[0] == '\0')
+//         return ((char *)big);
+//     i = 0;
+//     while (big[i] && len > i)
+//     {
+//         j = 0;
+//         while (big[i + j] == little[j] && (i + j) < len)
+//         {
+//             j++;
+//             if (little[j] == '\0')
+//                 return ((char *)big + i);
+//         }
+//         i++;
+//     }
+//     return (NULL);
+// }
