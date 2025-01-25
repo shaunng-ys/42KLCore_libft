@@ -32,22 +32,20 @@ int main(void)
 // {
 // 	void *mem = malloc(sizeof(*mem) * 30);
 // 	memset(mem, 'j', 30);
-
-//     printf("%s\n", (char *)ft_memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 14));
+// 	printf("%s\n", (char *)memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 0));
+// 	printf("%s\n", (char *)ft_memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 0));
 // 	return (0);
 // }
 void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {
-	unsigned int	value_size;
 	int				i;
 
 	i = 0;
-	value_size = sizeof(dest_str[i]);
 	while (n)
 	{
 		((char *)dest_str)[i] = ((char *)src_str)[i];
 		i++;
-		n = n - value_size;
+		n--;
 	}
 	return (dest_str);
 }

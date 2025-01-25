@@ -14,27 +14,30 @@
 
 // int main(void)
 // {
-//     char const *string = "lorem ipsum dolor sit amet";
-//     unsigned int starting_char = 400;
-//     size_t max = 20;
-//     printf("%s", ft_substr(string, starting_char, max));
+//     // char const *string = "lorem ipsum dolor sit amet";
+// 	// char const *string = "0123456789";
+// 	char const *string = "0123456789";
+//     unsigned int starting_char = 9;
+//     size_t max = 10;
+// 	char *substring = ft_substr(string, starting_char, max);
+//     printf("Print here: %s\n", substring);
+// 	free(substring);
 //     return (0);
 // }
 
-/*
-Function name: ft_substr
-Prototype: char *ft_substr(char const *s, unsigned int start, size_t len);
-Turn in files: -
-Parameters: 
-s: The string from which to create the substring.
-start: The start index of the substring in the string ’s’.
-len: The maximum length of the substring.
-Return value: The substring. NULL if the allocation fails.
-External functs.: malloc
-Description: Allocates (with malloc(3)) and returns a substring
-from the string ’s’.
-The substring begins at index ’start’ and is of maximum size ’len’.
-*/
+// Function name: ft_substr
+// Prototype: char *ft_substr(char const *s, unsigned int start, size_t len);
+// Turn in files: -
+// Parameters: 
+// s: The string from which to create the substring.
+// start: The start index of the substring in the string ’s’.
+// len: The maximum length of the substring.
+// Return value: The substring. NULL if the allocation fails.
+// External functs.: malloc
+// Description: Allocates (with malloc(3)) and returns a substring
+// from the string ’s’.
+// The substring begins at index ’start’ and is of maximum size ’len’.
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	int				i;
@@ -49,12 +52,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ptr0 = (char *)s + start;
 	i = 0;
 	if (counter <= len)
-		ptr1 = ft_calloc((counter + 1), sizeof(char));
+		ptr1 = ft_calloc((ft_strlen(ptr0) + 1), sizeof(char));
 	else
 		ptr1 = ft_calloc((len + 1), sizeof(char));
 	if (ptr1 == NULL)
 		return (NULL);
-	while (len-- != 0 && counter-- != 0)
+	while (len-- != 0 && counter-- != 0 && ptr0[i])
 	{
 		((char *)ptr1)[i] = ((char *)ptr0)[i];
 		i++;

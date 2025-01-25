@@ -28,11 +28,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	tracer;
-	// size_t	placeholder;
 	size_t	len_copy;
 
 	i = 0;
-	// placeholder = 0;
 	len_copy = len;
 	if (little[i] == 0)
 		return ((char *)big);
@@ -47,7 +45,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			tracer++;
 		}
 		i++;
-		// placeholder = i;
 	}
 	return (0);
 }

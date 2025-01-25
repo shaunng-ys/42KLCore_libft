@@ -33,7 +33,7 @@ static int	word_count(char const *string, char separator)
 	return (counter);
 }
 
-// static int	*lens_array(char const *string, char delimiter, int nbr_of_words)
+// static int	*lens_array(char const *string, char delim, int nbrofwords)
 // {
 // 	int	i;
 // 	int	j;
@@ -43,21 +43,21 @@ static int	word_count(char const *string, char separator)
 // 	i = 0;
 // 	j = 0;
 // 	counter = 0;
-// 	sequence_of_numbers = malloc((nbr_of_words + 1) * sizeof(int));
+// 	sequence_of_numbers = malloc((nbrofwords + 1) * sizeof(int));
 // 	if (sequence_of_numbers == 0)
 // 		return (NULL);
 // 	while (string[i])
 // 	{
-// 		while (string[i] != delimiter && string[i++])
+// 		while (string[i] != delim && string[i++])
 // 			counter++;
 // 		if (j < nbr_of_words) {
 // 			sequence_of_numbers[j++] = counter;
 // 		}
 // 		counter = 0;
 // 		// Can remove
-// 		while (string[i] != delimiter && string[i++])
+// 		while (string[i] != delim && string[i++])
 // 			;
-// 		while (string[i] == delimiter && string[i])
+// 		while (string[i] == delim && string[i])
 // 			i++;
 // 	}
 // 	sequence_of_numbers[j] = -1;
